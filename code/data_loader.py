@@ -1,8 +1,8 @@
 import time
 
 import pandas as pd
-from config import RAW_DATA_PATH,START
-
+from config import RAW_DATA_PATH, START
+from pprint import pprint
 
 def load_raw_data():
     """
@@ -13,19 +13,25 @@ def load_raw_data():
     :return:
     """
     df = pd.read_csv(RAW_DATA_PATH)
+    # 去除列名中前后的空格,规范化列名
+    df.columns=df.columns.str.strip()
     return df
 
 
-def get_basic_info(df: pd.DataFrame) -> dict:
+def get_basic_info(df: pd.DataFrame):
     """
      获取数据基本信息
     :param df:传入原始数据
-    :return:基本数据封装到字典并返回
+    :return:返回部分数据
     """
+    # 获取数据集基本信息
+    df.info()
+    # 选择部分信息存入字典
     info = {
-        'num_samples': df.shape[0],
-        'num_features': df.shape[1],
-        'columns': list(df.columns)
+        "num_samples": df.shape[0],
+        "num_features": df.shape[1],
+        "columns": list(df.columns),
+        "dtypes": df.dtypes.to_dict()
     }
     return info
 
@@ -33,5 +39,6 @@ def get_basic_info(df: pd.DataFrame) -> dict:
 if __name__ == '__main__':
     df = load_raw_data()
     info = get_basic_info(df)
-    print(info)
-    print(f'{time.time()-START:.2f}s')
+    # 打印复杂的结构信息
+    pprint(info)
+    print(f'{time.time() - START:.2f}s')
