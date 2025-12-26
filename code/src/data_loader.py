@@ -4,21 +4,22 @@ import pandas as pd
 from config import RAW_DATA_PATH, START
 from pprint import pprint
 
-def load_raw_data():
+
+def load_raw_data() -> pd.DataFrame:
     """
     加载原始用户数据
     - 读取CSV / 数据库
     - 不做任何清洗与修改
     - 保证“原始性”
-    :return:
+    :return:返回加载好的原始数据
     """
     df = pd.read_csv(RAW_DATA_PATH)
     # 去除列名中前后的空格,规范化列名
-    df.columns=df.columns.str.strip()
+    df.columns = df.columns.str.strip()
     return df
 
 
-def get_basic_info(df: pd.DataFrame):
+def get_basic_info(df: pd.DataFrame) -> dict:
     """
      获取数据基本信息
     :param df:传入原始数据
@@ -35,6 +36,9 @@ def get_basic_info(df: pd.DataFrame):
     }
     return info
 
+
+def data_loader(data,information)->pd.DataFrame:
+    pass
 
 if __name__ == '__main__':
     df = load_raw_data()

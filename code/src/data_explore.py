@@ -52,7 +52,7 @@ def explore_categorical_features(df: pd.DataFrame) -> dict:
 
 def categorical_by_lifecycle(df, col):
     """
-    分析不同生命周期用户中，某类别特征的分布情况
+    分析不同用户中，某类别特征的分布情况
     :param df:
     :param col:
     :return:

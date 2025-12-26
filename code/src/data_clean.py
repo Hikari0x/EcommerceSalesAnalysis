@@ -49,11 +49,24 @@ def mark_abnormal_values(df: pd.DataFrame) -> pd.DataFrame:
     return df_new
 
 
+def remove_duplicates(df_new: pd.DataFrame) -> pd.DataFrame:
+    """
+    查询是否有重复项,去除重复项
+    :return:
+    """
+    # 统计重复值的数量
+    df_new.duplicated().sum()
+    # 查看重复的行
+    dup_indices = df_new[df_new.duplicated(keep=False)].index
+    print(dup_indices)
+    return df_new
+
+
 def clean_data(
         df: pd.DataFrame,
         numeric_cols: list,
         categorical_cols: list
-)-> pd.DataFrame:
+) -> pd.DataFrame:
     """
     统一保存
     :return:
@@ -63,15 +76,16 @@ def clean_data(
     df_new = handle_missing_values(df_new, numeric_cols)
     df_new = handle_categorical_missing(df_new, categorical_cols)
     df_new = mark_abnormal_values(df_new)
+    df_new = remove_duplicates(df_new)
     # print(f'清洗后：{df_new.shape}\n{df_new.info()}')
-
+    df_new.to_csv('../data/df_new.csv')
     return df_new
 
 
 if __name__ == '__main__':
     df = load_raw_data()
-    numeric_cols=['age','revenue','days_since_last_order']
-    categorical_cols=['gender','lifecycle']
+    numeric_cols = ['age', 'revenue', 'days_since_last_order']
+    categorical_cols = ['gender', 'lifecycle']
     df_new = clean_data(df, numeric_cols, categorical_cols)
     # print(df_new)
     print(f'{time.time() - START:.2f}s')
