@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex ecommercesalesanalysis.idx"] 1766750945.62473 "ecommercesalesanalysis.idx" "ecommercesalesanalysis.ind" "ecommercesalesanalysis" 1766750951.07348 0
-  "ecommercesalesanalysis.idx" 1766750950.98665 4468 7eb190d4eb65e7bf62f2acc46fc88a9e "pdflatex"
+["makeindex api.idx"] 1766751752.52251 "api.idx" "api.ind" "api" 1766751755.50452 0
+  "api.idx" 1766751755.41803 4468 7eb190d4eb65e7bf62f2acc46fc88a9e "pdflatex"
   (generated)
-  "ecommercesalesanalysis.ilg"
-  "ecommercesalesanalysis.ind"
+  "api.ilg"
+  "api.ind"
   (rewritten before read)
-["pdflatex"] 1766750949.77355 "ecommercesalesanalysis.tex" "ecommercesalesanalysis.pdf" "ecommercesalesanalysis" 1766750951.07362 0
+["pdflatex"] 1766751754.15684 "api.tex" "api.pdf" "api" 1766751755.50469 0
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -126,13 +126,13 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1766742117 5639797 5850de1a1345f0699003e308fdecd976 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "ecommercesalesanalysis.aux" 1766750950.98576 7589 ae69f97edad9b32bf0d2f69395c77c50 "pdflatex"
-  "ecommercesalesanalysis.ind" 1766750948.44589 3867 240582efe3c55881117d58bd5b43ab22 "makeindex ecommercesalesanalysis.idx"
-  "ecommercesalesanalysis.out" 1766750950.98651 1693 98e0bc1114d8aa7d484925df5aafda66 "pdflatex"
-  "ecommercesalesanalysis.tex" 1766750944.12673 43738 88626e8e4250ca5c33c31e9485bd59b9 ""
-  "ecommercesalesanalysis.toc" 1766750950.98666 1204 f86680966aaac3caa2cb17752132554d "pdflatex"
+  "api.aux" 1766751755.41711 7589 ae69f97edad9b32bf0d2f69395c77c50 "pdflatex"
+  "api.ind" 1766751752.73404 3867 240582efe3c55881117d58bd5b43ab22 "makeindex api.idx"
+  "api.out" 1766751755.41786 1693 98e0bc1114d8aa7d484925df5aafda66 "pdflatex"
+  "api.tex" 1766751750.69738 43725 c93caba23db56066155865189260123b ""
+  "api.toc" 1766751755.41805 1204 f86680966aaac3caa2cb17752132554d "pdflatex"
   "sphinx.sty" 1766740504.69781 57112 09a06378993d563ace0d26559c575342 ""
-  "sphinxhighlight.sty" 1766750944.07342 7553 83fb52292c17957d9f4aadcb28c57a87 ""
+  "sphinxhighlight.sty" 1766751750.6454 7553 83fb52292c17957d9f4aadcb28c57a87 ""
   "sphinxlatexadmonitions.sty" 1766740504.69813 19258 40d230fa86bf8c791de90924bc0a9916 ""
   "sphinxlatexcontainers.sty" 1766740504.6982 900 d61f923db071a7b54d3cee8a1e6935d3 ""
   "sphinxlatexgraphics.sty" 1766740504.69829 4918 c9266041d02bc615d54b890e96e3acd3 ""
@@ -147,16 +147,16 @@
   "sphinxlatexstyletext.sty" 1766740504.69923 6932 46506bfce90adabe816de566561356fc ""
   "sphinxlatextables.sty" 1766740504.69944 63738 8535f6b8947e2dbf5470b5ef340e3e97 ""
   "sphinxmanual.cls" 1766740504.69954 4241 7b0d7a37df7b5715fb0dbd585c52ecdb ""
-  "sphinxmessages.sty" 1766750944.12838 681 062154b837c7f93303d309827e5b97ee ""
+  "sphinxmessages.sty" 1766751750.69891 681 062154b837c7f93303d309827e5b97ee ""
   "sphinxoptionsgeometry.sty" 1766740504.69961 2060 6c27b3eba37bde592ae8908ab2c1ac0f ""
   "sphinxoptionshyperref.sty" 1766740504.69968 1093 e468489bae7631a7f387b4b0f7bc15d4 ""
   "sphinxpackageboxes.sty" 1766740504.69982 36106 1be2053eb1cb9b083b3a75e3657bcb24 ""
   "sphinxpackagefootnote.sty" 1766740504.70004 15497 e3d010897db5f6f93f75d08335769b1f ""
   (generated)
-  "ecommercesalesanalysis.aux"
-  "ecommercesalesanalysis.idx"
-  "ecommercesalesanalysis.log"
-  "ecommercesalesanalysis.out"
-  "ecommercesalesanalysis.pdf"
-  "ecommercesalesanalysis.toc"
+  "api.aux"
+  "api.idx"
+  "api.log"
+  "api.out"
+  "api.pdf"
+  "api.toc"
   (rewritten before read)

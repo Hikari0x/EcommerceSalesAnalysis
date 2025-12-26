@@ -31,7 +31,7 @@ html_theme = 'sphinx_rtd_theme'
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'EcommerceSalesAnalysis'
+project = 'API参考'
 copyright = '2025, lihetong'
 author = 'lihetong'
 release = '2025-12-30'

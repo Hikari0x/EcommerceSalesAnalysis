@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.26)  26 DEC 2025 20:09
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.26)  26 DEC 2025 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ecommercesalesanalysis.tex
-(./ecommercesalesanalysis.tex
+**api.tex
+(./api.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (./sphinxmanual.cls
@@ -929,10 +929,10 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: sphinxmessages 2019/01/04 v2.0 Localized LaTeX macros (Sphinx team)
 )
 \@indexfile=\write4
-\openout4 = `ecommercesalesanalysis.idx'.
+\openout4 = `api.idx'.
 
 
-Writing index file ecommercesalesanalysis.idx
+Writing index file api.idx
 
 Package xeCJK Warning: Fandol is being set as the default font for CJK text.
 (xeCJK)                Please make sure it has been properly installed.
@@ -964,8 +964,8 @@ t;"
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:script=hani;language=dflt
 ;"
 
-(./ecommercesalesanalysis.aux)
-\openout1 = `ecommercesalesanalysis.aux'.
+(./api.aux)
+\openout1 = `api.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
@@ -1106,9 +1106,9 @@ fd)))
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 87.
-(./ecommercesalesanalysis.out) (./ecommercesalesanalysis.out)
+(./api.out) (./api.out)
 \@outlinefile=\write5
-\openout5 = `ecommercesalesanalysis.out'.
+\openout5 = `api.out'.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 95.
 
@@ -1159,9 +1159,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2
 
 
-] (./ecommercesalesanalysis.toc)
+] (./api.toc)
 \tf@toc=\write6
-\openout6 = `ecommercesalesanalysis.toc'.
+\openout6 = `api.toc'.
 
 
 
@@ -1252,7 +1252,7 @@ Chapter 4.
 [13
 
 
-] (./ecommercesalesanalysis.ind
+] (./api.ind
 
 [14
 
@@ -1329,7 +1329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
 [16
 
-]) (./ecommercesalesanalysis.aux)
+]) (./api.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2022/08/05>
@@ -1338,17 +1338,16 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `ecommercesalesanalysis.out' has not changed.
-
+Package rerunfilecheck Info: File `api.out' has not changed.
 (rerunfilecheck)             Checksum: 98E0BC1114D8AA7D484925DF5AAFDA66;1693.
  ) 
 Here is how much of TeX's memory you used:
- 21971 strings out of 473832
- 449807 string characters out of 5729480
- 903528 words of memory out of 5000000
- 44615 multiletter control sequences out of 15000+600000
- 565049 words of font info for 122 fonts, out of 8000000 for 9000
+ 21974 strings out of 473832
+ 449375 string characters out of 5729480
+ 903416 words of memory out of 5000000
+ 44617 multiletter control sequences out of 15000+600000
+ 565057 words of font info for 123 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 74i,12n,100p,1211b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,12n,100p,1192b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ecommercesalesanalysis.pdf (20 pages).
+Output written on api.pdf (20 pages).
