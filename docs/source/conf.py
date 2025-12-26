@@ -34,7 +34,7 @@ html_theme = 'sphinx_rtd_theme'
 project = 'API参考'
 copyright = '2025, lihetong'
 author = 'lihetong'
-release = '2025-12-30'
+release = 'v1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
