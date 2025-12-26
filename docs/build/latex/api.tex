@@ -303,18 +303,18 @@
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_loader:data_loader.data_loader}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_loader}}}}}(data, information)
+{\hyperref[\detokenize{api/data_loader:data_loader.data_loader}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_loader}}}}}()
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-
+获取规范化原始数据 返回 :param data: 规范化列名的原始数据 :param information: 基本信息 :return:
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_loader:data_loader.get_basic_info}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{get\_basic\_info}}}}}(df)
+{\hyperref[\detokenize{api/data_loader:data_loader.get_basic_info}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{get\_basic\_info}}}}}()
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
@@ -330,7 +330,7 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-加载原始用户数据 \sphinxhyphen{} 读取CSV / 数据库 \sphinxhyphen{} 不做任何清洗与修改 \sphinxhyphen{} 保证“原始性” :return:返回加载好的原始数据
+加载原始用户数据,并规范列名 \sphinxhyphen{} 读取CSV / 数据库 \sphinxhyphen{} 不做任何清洗与修改 \sphinxhyphen{} 保证“原始性” :return:返回加载好的原始数据
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -346,9 +346,16 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{data\_loader}}}
-{\sphinxparam{\DUrole{n}{data}}\sphinxparamcomma \sphinxparam{\DUrole{n}{information}}}
+{}
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
+\sphinxAtStartPar
+获取规范化原始数据
+返回
+:param data: 规范化列名的原始数据
+:param information: 基本信息
+:return:
+
 \end{fulllineitems}
 
 \index{get\_basic\_info()（在 data\_loader 模块中）@\spxentry{get\_basic\_info()（在 data\_loader 模块中）}}
@@ -358,7 +365,7 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{get\_basic\_info}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
+{}
 {{ $\rightarrow$ dict}}
 \pysigstopsignatures\begin{quote}
 
@@ -383,7 +390,7 @@
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-加载原始用户数据
+加载原始用户数据,并规范列名
 \sphinxhyphen{} 读取CSV / 数据库
 \sphinxhyphen{} 不做任何清洗与修改
 \sphinxhyphen{} 保证“原始性”

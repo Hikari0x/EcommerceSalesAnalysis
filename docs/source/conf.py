@@ -2,7 +2,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('../../code/src'))  # 指向项目根目录
+sys.path.insert(0, os.path.abspath('../../code'))  # 指向项目根目录
 
 # 扩展列表
 extensions = [

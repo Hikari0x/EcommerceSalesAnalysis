@@ -1,0 +1,11 @@
+docker pull mysql:8.0
+
+docker run -d \
+--name mysql_docker \
+-p 3307:3306 \
+-e MYSQL_ROOT_PASSWORD=12345678 \
+-e MYSQL_DATABASE=ecommerce_sales_analysis \
+-e MYSQL_USER=lht \
+-e MYSQL_PASSWORD=lht123456 \
+-e MYSQL_ROOT_HOST='%' \
+mysql:8.0

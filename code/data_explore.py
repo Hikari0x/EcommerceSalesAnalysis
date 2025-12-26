@@ -1,14 +1,13 @@
 import time
 import pandas as pd
 
-from config import START
+import config
 from data_loader import load_raw_data
 
 
-def explore_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+def explore_missing_values():
     """
     统计各字段缺失率
-    :param df:
     :return:
     """
     # 计算每列的缺失值数量
@@ -74,4 +73,4 @@ if __name__ == '__main__':
     re = explore_categorical_features(df)
     print(re)
     print(categorical_by_lifecycle(df, 'gender'))
-    print(f'{time.time() - START:.2f}s')
+    print(f'{time.time() - config.START:.2f}s')
