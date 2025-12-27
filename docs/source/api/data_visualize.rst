@@ -8,9 +8,9 @@
 
    .. autosummary::
    
-      plot_box_by_category
-      plot_categorical_by_lifecycle
+      data_visualize
       plot_categorical_distribution
+      plot_category_vs_numeric
       plot_correlation_heatmap
       plot_numeric_distribution
    

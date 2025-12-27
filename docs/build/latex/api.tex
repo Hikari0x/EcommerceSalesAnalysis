@@ -198,7 +198,7 @@
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/model_train:module-model_train}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{model\_train}}}}}
+{\hyperref[\detokenize{api/data_visualize:module-data_visualize}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_visualize}}}}}
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
@@ -209,7 +209,7 @@
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/model_evaluate:module-model_evaluate}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{model\_evaluate}}}}}
+{\hyperref[\detokenize{api/feature_engineer:module-feature_engineer}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{feature\_engineer}}}}}
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
@@ -530,7 +530,7 @@ load\_raw\_data已经清洗过列名,去除空格,可以正常存入
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-数据清洗主函数 :return:
+数据清洗主函数 :return:清洗好的新数据集df\_new
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -606,7 +606,7 @@ load\_raw\_data已经清洗过列名,去除空格,可以正常存入
 \pysigstopsignatures
 \sphinxAtStartPar
 数据清洗主函数
-:return:
+:return:清洗好的新数据集df\_new
 
 \end{fulllineitems}
 
@@ -953,8 +953,8 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxstepscope
 
 
-\section{model\_train}
-\label{\detokenize{api/model_train:module-model_train}}\label{\detokenize{api/model_train:model-train}}\label{\detokenize{api/model_train::doc}}\index{module@\spxentry{module}!model\_train@\spxentry{model\_train}}\index{model\_train@\spxentry{model\_train}!module@\spxentry{module}}\subsubsection*{Functions}
+\section{data\_visualize}
+\label{\detokenize{api/data_visualize:module-data_visualize}}\label{\detokenize{api/data_visualize:data-visualize}}\label{\detokenize{api/data_visualize::doc}}\index{module@\spxentry{module}!data\_visualize@\spxentry{data\_visualize}}\index{data\_visualize@\spxentry{data\_visualize}!module@\spxentry{module}}\subsubsection*{Functions}
 
 
 \begin{savenotes}
@@ -985,12 +985,56 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/model_train:model_train.train_model}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{train\_model}}}}}(df, target\_col{[}, test\_size, ...{]})
+{\hyperref[\detokenize{api/data_visualize:data_visualize.data_visualize}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_visualize}}}}}()
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-模型训练模块 :param df: 特征工程后的数据 :param target\_col: 目标列 :return: 训练好的模型 + 测试集
+数据可视化总入口 :return:
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_categorical_distribution}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_categorical\_distribution}}}}}(df, ...)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+绘制所有类别型特征的频数分布
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_category_vs_numeric}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_category\_vs\_numeric}}}}}(df, ...)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+类别特征 vs 数值特征 的箱线图
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_correlation_heatmap}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_correlation\_heatmap}}}}}(df)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+绘制数值型特征相关性热力图
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_numeric_distribution}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_numeric\_distribution}}}}}(df, numeric\_cols)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+绘制所有数值型特征的分布图
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -999,21 +1043,79 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableafterendhook
 \sphinxatlongtableend
 \end{savenotes}
-\index{train\_model()（在 model\_train 模块中）@\spxentry{train\_model()（在 model\_train 模块中）}}
+\index{data\_visualize()（在 data\_visualize 模块中）@\spxentry{data\_visualize()（在 data\_visualize 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/model_train:model_train.train_model}}
+\phantomsection\label{\detokenize{api/data_visualize:data_visualize.data_visualize}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{model\_train.}}\sphinxbfcode{\sphinxupquote{train\_model}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{target\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}\sphinxparamcomma \sphinxparam{\DUrole{n}{test\_size}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{float}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{0.2}}\sphinxparamcomma \sphinxparam{\DUrole{n}{random\_state}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{int}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{123}}\sphinxparamcomma \sphinxparam{\DUrole{n}{model\_type}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{'rf'}}}
+{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{data\_visualize}}}
+{}
+{{ $\rightarrow$ None}}
+\pysigstopsignatures
+\sphinxAtStartPar
+数据可视化总入口
+:return:
+
+\end{fulllineitems}
+
+\index{plot\_categorical\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_categorical_distribution}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_categorical\_distribution}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-模型训练模块
-:param df: 特征工程后的数据
-:param target\_col: 目标列
-:return: 训练好的模型 + 测试集
+绘制所有类别型特征的频数分布
+
+\end{fulllineitems}
+
+\index{plot\_category\_vs\_numeric()（在 data\_visualize 模块中）@\spxentry{plot\_category\_vs\_numeric()（在 data\_visualize 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_category_vs_numeric}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_category\_vs\_numeric}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+类别特征 vs 数值特征 的箱线图
+
+\end{fulllineitems}
+
+\index{plot\_correlation\_heatmap()（在 data\_visualize 模块中）@\spxentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_correlation_heatmap}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_correlation\_heatmap}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+绘制数值型特征相关性热力图
+
+\end{fulllineitems}
+
+\index{plot\_numeric\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_numeric_distribution}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_numeric\_distribution}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+绘制所有数值型特征的分布图
 
 \end{fulllineitems}
 
@@ -1021,8 +1123,8 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxstepscope
 
 
-\section{model\_evaluate}
-\label{\detokenize{api/model_evaluate:module-model_evaluate}}\label{\detokenize{api/model_evaluate:model-evaluate}}\label{\detokenize{api/model_evaluate::doc}}\index{module@\spxentry{module}!model\_evaluate@\spxentry{model\_evaluate}}\index{model\_evaluate@\spxentry{model\_evaluate}!module@\spxentry{module}}\subsubsection*{Functions}
+\section{feature\_engineer}
+\label{\detokenize{api/feature_engineer:module-feature_engineer}}\label{\detokenize{api/feature_engineer:feature-engineer}}\label{\detokenize{api/feature_engineer::doc}}\index{module@\spxentry{module}!feature\_engineer@\spxentry{feature\_engineer}}\index{feature\_engineer@\spxentry{feature\_engineer}!module@\spxentry{module}}\subsubsection*{Functions}
 
 
 \begin{savenotes}
@@ -1053,12 +1155,56 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/model_evaluate:model_evaluate.evaluate_model}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{evaluate\_model}}}}}(model, x\_test, y\_test)
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.build_features_for_dl}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{build\_features\_for\_dl}}}}}(df, numeric\_cols, ...)
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-模型评估函数
+深度学习模型特征工程主入口 特点： \sphinxhyphen{} 数值特征：标准化 \sphinxhyphen{} 类别特征：整数编码（Embedding 用） \sphinxhyphen{} 不做 One\sphinxhyphen{}Hot :param df:DataFrame清洗好的数据集 \sphinxhyphen{} numeric\_cols:数值型列名 \sphinxhyphen{} categorical\_cols:类别型列名 :return:     df\_new:DataFrame编码后的数据     scaler:数值特征标准化器
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.build_features_for_ml}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{build\_features\_for\_ml}}}}}(df, numeric\_cols, ...)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+传统机器学习模型（LR / RF）特征工程主入口 步骤： 1. 数值特征标准化 2. 类别特征 One\sphinxhyphen{}Hot 编码 :param df: :param numeric\_cols: :param categorical\_cols: :param scaler: :return:     df\_new:DataFrame最终可用于模型训练的数据     scaler:数值特征标准化器.
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.encode_categorical_for_dl}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{encode\_categorical\_for\_dl}}}}}(df, categorical\_cols)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+深度学习用的类别特征编码 \sphinxhyphen{} 每个类别列编码成整数 \sphinxhyphen{} 后续交给 Embedding 层 :param df:DataFrame清洗好的数据集 :param categorical\_cols:类别型列名 :return:     df\_new:DataFrame编码后的数据     encoders:编码器
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.one_hot_encode}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{one\_hot\_encode}}}}}(df, categorical\_cols)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+:param df:DataFrame清洗好的数据集 :param categorical\_cols:类别型列名 :return:One\sphinxhyphen{}Hot 编码后的数据
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.scale_numeric_features}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{scale\_numeric\_features}}}}}(df, numeric\_cols{[}, ...{]})
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+数值特征标准化 :param df:DataFrame清洗好的数据集 :param numeric\_cols:数值型列名 :param scaler:训练阶段传 None，预测阶段传已有 scaler :return:     df\_new:DataFrame标准化后的数据     scaler:
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -1067,18 +1213,129 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableafterendhook
 \sphinxatlongtableend
 \end{savenotes}
-\index{evaluate\_model()（在 model\_evaluate 模块中）@\spxentry{evaluate\_model()（在 model\_evaluate 模块中）}}
+\index{build\_features\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/model_evaluate:model_evaluate.evaluate_model}}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.build_features_for_dl}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{model\_evaluate.}}\sphinxbfcode{\sphinxupquote{evaluate\_model}}}
-{\sphinxparam{\DUrole{n}{model}}\sphinxparamcomma \sphinxparam{\DUrole{n}{x\_test}}\sphinxparamcomma \sphinxparam{\DUrole{n}{y\_test}}}
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{build\_features\_for\_dl}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scaler}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{StandardScaler\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }None}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{None}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-模型评估函数
+深度学习模型特征工程主入口
+特点：
+\sphinxhyphen{} 数值特征：标准化
+\sphinxhyphen{} 类别特征：整数编码（Embedding 用）
+\sphinxhyphen{} 不做 One\sphinxhyphen{}Hot
+:param df:DataFrame清洗好的数据集
+\sphinxhyphen{} numeric\_cols:数值型列名
+\sphinxhyphen{} categorical\_cols:类别型列名
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+df\_new:DataFrame编码后的数据
+scaler:数值特征标准化器
+\end{quote}
+
+\end{fulllineitems}
+
+\index{build\_features\_for\_ml()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_ml()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.build_features_for_ml}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{build\_features\_for\_ml}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scaler}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{StandardScaler\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }None}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{None}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+传统机器学习模型（LR / RF）特征工程主入口
+步骤：
+1. 数值特征标准化
+2. 类别特征 One\sphinxhyphen{}Hot 编码
+:param df:
+:param numeric\_cols:
+:param categorical\_cols:
+:param scaler:
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+df\_new:DataFrame最终可用于模型训练的数据
+scaler:数值特征标准化器
+\end{quote}
+
+\end{fulllineitems}
+
+\index{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.encode_categorical_for_dl}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{encode\_categorical\_for\_dl}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+深度学习用的类别特征编码
+\sphinxhyphen{} 每个类别列编码成整数
+\sphinxhyphen{} 后续交给 Embedding 层
+:param df:DataFrame清洗好的数据集
+:param categorical\_cols:类别型列名
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+df\_new:DataFrame编码后的数据
+encoders:编码器
+\end{quote}
+
+\end{fulllineitems}
+
+\index{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.one_hot_encode}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{one\_hot\_encode}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{{ $\rightarrow$ DataFrame}}
+\pysigstopsignatures
+\sphinxAtStartPar
+:param df:DataFrame清洗好的数据集
+:param categorical\_cols:类别型列名
+:return:One\sphinxhyphen{}Hot 编码后的数据
+
+\end{fulllineitems}
+
+\index{scale\_numeric\_features()（在 feature\_engineer 模块中）@\spxentry{scale\_numeric\_features()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.scale_numeric_features}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{scale\_numeric\_features}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scaler}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{StandardScaler\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }None}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{None}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+数值特征标准化
+:param df:DataFrame清洗好的数据集
+:param numeric\_cols:数值型列名
+:param scaler:训练阶段传 None，预测阶段传已有 scaler
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+df\_new:DataFrame标准化后的数据
+scaler:
+\end{quote}
 
 \end{fulllineitems}
 
@@ -1184,10 +1441,10 @@ Sphinx \sphinxhyphen{} 文档生成
 \item\relax\sphinxstyleindexentry{data\_clean}\sphinxstyleindexpageref{api/data_clean:\detokenize{module-data_clean}}
 \item\relax\sphinxstyleindexentry{data\_explore}\sphinxstyleindexpageref{api/data_explore:\detokenize{module-data_explore}}
 \item\relax\sphinxstyleindexentry{data\_loader}\sphinxstyleindexpageref{api/data_loader:\detokenize{module-data_loader}}
+\item\relax\sphinxstyleindexentry{data\_visualize}\sphinxstyleindexpageref{api/data_visualize:\detokenize{module-data_visualize}}
 \indexspace
-\bigletter{m}
-\item\relax\sphinxstyleindexentry{model\_evaluate}\sphinxstyleindexpageref{api/model_evaluate:\detokenize{module-model_evaluate}}
-\item\relax\sphinxstyleindexentry{model\_train}\sphinxstyleindexpageref{api/model_train:\detokenize{module-model_train}}
+\bigletter{f}
+\item\relax\sphinxstyleindexentry{feature\_engineer}\sphinxstyleindexpageref{api/feature_engineer:\detokenize{module-feature_engineer}}
 \end{sphinxtheindex}
 
 \renewcommand{\indexname}{索引}

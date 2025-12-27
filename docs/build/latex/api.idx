@@ -24,11 +24,19 @@
 \indexentry{explore\_missing\_values()（在 data\_explore 模块中）@\spxentry{explore\_missing\_values()（在 data\_explore 模块中）}}{8}
 \indexentry{explore\_numeric\_features()（在 data\_explore 模块中）@\spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}}{8}
 \indexentry{split\_columns\_by\_type()（在 data\_explore 模块中）@\spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}}{8}
-\indexentry{module@\spxentry{module}!model\_train@\spxentry{model\_train}}{8}
-\indexentry{model\_train@\spxentry{model\_train}!module@\spxentry{module}}{8}
-\indexentry{train\_model()（在 model\_train 模块中）@\spxentry{train\_model()（在 model\_train 模块中）}}{8}
-\indexentry{module@\spxentry{module}!model\_evaluate@\spxentry{model\_evaluate}}{8}
-\indexentry{model\_evaluate@\spxentry{model\_evaluate}!module@\spxentry{module}}{8}
-\indexentry{evaluate\_model()（在 model\_evaluate 模块中）@\spxentry{evaluate\_model()（在 model\_evaluate 模块中）}}{8}
-\indexentry{module@\spxentry{module}!config@\spxentry{config}}{9}
-\indexentry{config@\spxentry{config}!module@\spxentry{module}}{9}
+\indexentry{module@\spxentry{module}!data\_visualize@\spxentry{data\_visualize}}{8}
+\indexentry{data\_visualize@\spxentry{data\_visualize}!module@\spxentry{module}}{8}
+\indexentry{data\_visualize()（在 data\_visualize 模块中）@\spxentry{data\_visualize()（在 data\_visualize 模块中）}}{8}
+\indexentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）}}{8}
+\indexentry{plot\_category\_vs\_numeric()（在 data\_visualize 模块中）@\spxentry{plot\_category\_vs\_numeric()（在 data\_visualize 模块中）}}{8}
+\indexentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）@\spxentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）}}{8}
+\indexentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}}{8}
+\indexentry{module@\spxentry{module}!feature\_engineer@\spxentry{feature\_engineer}}{9}
+\indexentry{feature\_engineer@\spxentry{feature\_engineer}!module@\spxentry{module}}{9}
+\indexentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）}}{9}
+\indexentry{build\_features\_for\_ml()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_ml()（在 feature\_engineer 模块中）}}{9}
+\indexentry{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）}}{9}
+\indexentry{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}{9}
+\indexentry{scale\_numeric\_features()（在 feature\_engineer 模块中）@\spxentry{scale\_numeric\_features()（在 feature\_engineer 模块中）}}{9}
+\indexentry{module@\spxentry{module}!config@\spxentry{config}}{10}
+\indexentry{config@\spxentry{config}!module@\spxentry{module}}{10}
