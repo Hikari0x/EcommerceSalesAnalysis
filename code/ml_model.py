@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 from config import START
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from joblib import dump
@@ -54,7 +54,18 @@ def _evaluate(model, x_test, y_test) -> dict:
         )
     }
 
-
+def cross_validate_model(model, x, y, cv=5):
+    scores = cross_val_score(
+        model,
+        x,
+        y,
+        cv=cv,
+        scoring='f1_macro'
+    )
+    return {
+        "cv_mean": scores.mean(),
+        "cv_std": scores.std()
+    }
 def train_and_evaluate(
         df: pd.DataFrame,
         target_col: str,
