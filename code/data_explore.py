@@ -133,14 +133,15 @@ def explore_correlation(df: pd.DataFrame, method: str = 'pearson', threshold: fl
     return corr_matrix, strong_corr
 
 
-def split_columns_by_type(df: pd.DataFrame):
+def split_columns_clean(df: pd.DataFrame):
     """
-    自动划分数值列和类别列
-    :param df: DataFrame数据集
+    用于清洗数据划分列
+    :param df: DataFrame原始数据
     :return: 数值列和类别列
     """
     numeric_cols = df.select_dtypes(include=["int64", "float64"]).columns.tolist()
     categorical_cols = df.select_dtypes(include=["object"]).columns.tolist()
+
     return numeric_cols, categorical_cols
 
 
@@ -167,7 +168,8 @@ def data_explore():
     print(correlation)
     print(f'自动划分数值列和类别列')
     numeric_cols, categorical_cols = split_columns_by_type(df)
-    print(numeric_cols, categorical_cols)
+    print(f'建模列:{numeric_cols}'
+          f'类别列:{categorical_cols}')
 
 
 if __name__ == '__main__':

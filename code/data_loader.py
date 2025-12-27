@@ -93,7 +93,7 @@ def get_basic_info() -> dict:
     # 获取原始数据
     df = load_raw_data()
     # 获取数据集基本信息
-    df.info()
+    # df.info()
     # 选择部分信息存入字典
     info = {
         "num_samples": df.shape[0],
@@ -113,6 +113,7 @@ def data_loader() -> pd.DataFrame:
     save_to_mysql(load_raw_data(), config.TABLE_NAME, get_mysql_engine())
     # df = load_raw_data()
     df = load_from_mysql(get_mysql_engine(), config.TABLE_NAME)
+    print(f'基本数据信息')
     info = get_basic_info()
     pprint(info)
     return df
