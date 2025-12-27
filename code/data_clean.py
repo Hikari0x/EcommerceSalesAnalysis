@@ -2,18 +2,23 @@ import time
 
 import pandas as pd
 
-from config import START
-from data_loader import load_raw_data
+import config
+import data_loader
+import data_explore
 
 
-def handle_missing_values(df: pd.DataFrame, numeric_cols: list) -> pd.DataFrame:
+def handle_missing_values(
+        df: pd.DataFrame,
+        numeric_cols: list,
+        fill_value: int = -1
+) -> pd.DataFrame:
     """
     数值型特征缺失值处理：
-    - 使用 -1 进行占位填充
-    - 同时构造缺失指示变量
-    :param df:原始数据
+    1. 使用指定值（默认 -1）填充缺失
+    2. 为每个数值特征创建缺失指示变量
+    :param df:原始 DataFrame数据集
     :param numeric_cols:数值列
-    :return:
+    :return: 填充后的数据
     """
     df_new = df.copy()
     # 遍历所有数值型列
@@ -27,19 +32,27 @@ def handle_missing_values(df: pd.DataFrame, numeric_cols: list) -> pd.DataFrame:
     return df_new
 
 
-def handle_categorical_missing(df: pd.DataFrame, categorical_cols: list) -> pd.DataFrame:
+def handle_categorical_missing(df: pd.DataFrame, categorical_cols: list, fill_value: str = 'Unknown') -> pd.DataFrame:
     """
     类别型特征缺失值处理：填充为 'Unknown'
+    :param df:原始数据集
+    :param categorical_cols:类别型列
+    :param fill_value:填充值，默认为 'Unknown'
+    :return:填充后的数据
     """
     df_new = df.copy()
     for col in categorical_cols:
-        df_new[col] = df_new[col].fillna("Unknown")
+        df_new[col] = df_new[col].fillna(fill_value)
     return df_new
 
 
 def mark_abnormal_values(df: pd.DataFrame) -> pd.DataFrame:
     """
-    异常值标记，不修改原始取值
+    异常值标记（不修改原始数值）
+    当前仅对 age 进行简单规则标记
+    - age <= 0 或 age > 100 视为异常
+    :param df: DataFrame
+    :return: 添加异常标记列后的 DataFrame数据集
     """
     df_new = df.copy()
     if "age" in df_new.columns:
@@ -49,27 +62,43 @@ def mark_abnormal_values(df: pd.DataFrame) -> pd.DataFrame:
     return df_new
 
 
-def remove_duplicates(df_new: pd.DataFrame) -> pd.DataFrame:
+def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
-    查询是否有重复项,去除重复项
-    :return:
+    重复值处理
+    - 统计重复行数量
+    - 删除完全重复的行（保留第一条）
+    :param df: DataFrame
+    :return: 去重后的 DataFrame数据集
     """
-    # 统计重复值的数量
-    df_new.duplicated().sum()
-    # 查看重复的行
-    dup_indices = df_new[df_new.duplicated(keep=False)].index
-    print(dup_indices)
+    # 统计重复行数量
+    dup_count = df.duplicated().sum()
+    if dup_count > 0:
+        print(f"发现重复行数量：{dup_count}，已执行删除")
+        # 删除重复行，保留第一次出现的
+        df_new = df.drop_duplicates(keep="first")
+    else:
+        print("未发现重复行")
     return df_new
 
 
-def clean_data(
+def save_clean_data(df: pd.DataFrame, path: str) -> None:
+    """
+    保存清洗后的数据
+    :param df: DataFrame
+    :param path: 保存路径
+    """
+    df.to_csv(path, index=False)
+    print(f"清洗后数据已保存至：{path}")
+
+
+def data_clean(
         df: pd.DataFrame,
         numeric_cols: list,
         categorical_cols: list
 ) -> pd.DataFrame:
     """
-    统一保存
-    :return:
+    数据清洗主函数
+    :return:清洗好的新数据集df_new
     """
     # print(f'清洗前：{df.shape}\n{df.info()}')
     df_new = df.copy()
@@ -78,14 +107,10 @@ def clean_data(
     df_new = mark_abnormal_values(df_new)
     df_new = remove_duplicates(df_new)
     # print(f'清洗后：{df_new.shape}\n{df_new.info()}')
-    df_new.to_csv('../data/df_new.csv')
+    save_clean_data(df_new, config.DF_NEW_PATH)
     return df_new
 
-
 if __name__ == '__main__':
-    df = load_raw_data()
-    numeric_cols = ['age', 'revenue', 'days_since_last_order']
-    categorical_cols = ['gender', 'lifecycle']
-    df_new = clean_data(df, numeric_cols, categorical_cols)
-    # print(df_new)
-    print(f'{time.time() - START:.2f}s')
+    numeric_cols, categorical_cols = data_explore.split_columns_by_type(data_loader.load_raw_data())
+    data_clean(data_loader.load_raw_data(), numeric_cols, categorical_cols)
+    print(f'{time.time() - config.START:.2f}s')

@@ -6,104 +6,87 @@
 \let\spxextra\sphinxstyleindexextra
 
 
-  \lettergroup{B}
-  \item \spxentry{build\_features()（在 feature\_engineer 模块中）}, \hyperpage{7}
+  \lettergroup{A}
+  \item \spxentry{analyze\_feature\_by\_group()（在 data\_explore 模块中）}, \hyperpage{7}
 
   \indexspace
 
   \lettergroup{C}
-  \item \spxentry{categorical\_by\_lifecycle()（在 data\_explore 模块中）}, \hyperpage{6}
-  \item \spxentry{clean\_data()（在 data\_clean 模块中）}, \hyperpage{6}
   \item \spxentry{config}
-    \subitem \spxentry{module}, \hyperpage{8}
+    \subitem \spxentry{module}, \hyperpage{9}
 
   \indexspace
 
   \lettergroup{D}
   \item \spxentry{data\_clean}
     \subitem \spxentry{module}, \hyperpage{6}
+  \item \spxentry{data\_clean()（在 data\_clean 模块中）}, \hyperpage{6}
   \item \spxentry{data\_explore}
-    \subitem \spxentry{module}, \hyperpage{6}
+    \subitem \spxentry{module}, \hyperpage{7}
+  \item \spxentry{data\_explore()（在 data\_explore 模块中）}, \hyperpage{8}
   \item \spxentry{data\_loader}
     \subitem \spxentry{module}, \hyperpage{5}
   \item \spxentry{data\_loader()（在 data\_loader 模块中）}, \hyperpage{5}
-  \item \spxentry{data\_visualize}
-    \subitem \spxentry{module}, \hyperpage{7}
 
   \indexspace
 
   \lettergroup{E}
   \item \spxentry{evaluate\_model()（在 model\_evaluate 模块中）}, \hyperpage{8}
-  \item \spxentry{explore\_categorical\_features()（在 data\_explore 模块中）}, \hyperpage{6}
-  \item \spxentry{explore\_missing\_values()（在 data\_explore 模块中）}, \hyperpage{6}
-  \item \spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}, \hyperpage{7}
-
-  \indexspace
-
-  \lettergroup{F}
-  \item \spxentry{feature\_engineer}
-    \subitem \spxentry{module}, \hyperpage{7}
+  \item \spxentry{explore\_categorical\_features()（在 data\_explore 模块中）}, \hyperpage{8}
+  \item \spxentry{explore\_correlation()（在 data\_explore 模块中）}, \hyperpage{8}
+  \item \spxentry{explore\_missing\_values()（在 data\_explore 模块中）}, \hyperpage{8}
+  \item \spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}, \hyperpage{8}
 
   \indexspace
 
   \lettergroup{G}
   \item \spxentry{get\_basic\_info()（在 data\_loader 模块中）}, \hyperpage{5}
+  \item \spxentry{get\_mysql\_engine()（在 data\_loader 模块中）}, \hyperpage{6}
 
   \indexspace
 
   \lettergroup{H}
   \item \spxentry{handle\_categorical\_missing()（在 data\_clean 模块中）}, \hyperpage{6}
-  \item \spxentry{handle\_missing\_values()（在 data\_clean 模块中）}, \hyperpage{6}
+  \item \spxentry{handle\_missing\_values()（在 data\_clean 模块中）}, \hyperpage{7}
 
   \indexspace
 
   \lettergroup{L}
-  \item \spxentry{load\_raw\_data()（在 data\_loader 模块中）}, \hyperpage{5}
+  \item \spxentry{load\_from\_mysql()（在 data\_loader 模块中）}, \hyperpage{6}
+  \item \spxentry{load\_raw\_data()（在 data\_loader 模块中）}, \hyperpage{6}
 
   \indexspace
 
   \lettergroup{M}
-  \item \spxentry{main}
-    \subitem \spxentry{module}, \hyperpage{8}
-  \item \spxentry{main()（在 main 模块中）}, \hyperpage{8}
-  \item \spxentry{mark\_abnormal\_values()（在 data\_clean 模块中）}, \hyperpage{6}
+  \item \spxentry{mark\_abnormal\_values()（在 data\_clean 模块中）}, \hyperpage{7}
   \item \spxentry{model\_evaluate}
     \subitem \spxentry{module}, \hyperpage{8}
   \item \spxentry{model\_train}
-    \subitem \spxentry{module}, \hyperpage{7}
+    \subitem \spxentry{module}, \hyperpage{8}
   \item \spxentry{module}
-    \subitem \spxentry{config}, \hyperpage{8}
+    \subitem \spxentry{config}, \hyperpage{9}
     \subitem \spxentry{data\_clean}, \hyperpage{6}
-    \subitem \spxentry{data\_explore}, \hyperpage{6}
+    \subitem \spxentry{data\_explore}, \hyperpage{7}
     \subitem \spxentry{data\_loader}, \hyperpage{5}
-    \subitem \spxentry{data\_visualize}, \hyperpage{7}
-    \subitem \spxentry{feature\_engineer}, \hyperpage{7}
-    \subitem \spxentry{main}, \hyperpage{8}
     \subitem \spxentry{model\_evaluate}, \hyperpage{8}
-    \subitem \spxentry{model\_train}, \hyperpage{7}
-
-  \indexspace
-
-  \lettergroup{O}
-  \item \spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}, \hyperpage{7}
-
-  \indexspace
-
-  \lettergroup{P}
-  \item \spxentry{plot\_box\_by\_category()（在 data\_visualize 模块中）}, \hyperpage{7}
-  \item \spxentry{plot\_categorical\_by\_lifecycle()（在 data\_visualize 模块中）}, \hyperpage{7}
-  \item \spxentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）}, \hyperpage{7}
-  \item \spxentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）}, \hyperpage{7}
-  \item \spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}, \hyperpage{7}
+    \subitem \spxentry{model\_train}, \hyperpage{8}
 
   \indexspace
 
   \lettergroup{R}
-  \item \spxentry{remove\_duplicates()（在 data\_clean 模块中）}, \hyperpage{6}
+  \item \spxentry{remove\_duplicates()（在 data\_clean 模块中）}, \hyperpage{7}
+
+  \indexspace
+
+  \lettergroup{S}
+  \item \spxentry{save\_clean\_data()（在 data\_clean 模块中）}, \hyperpage{7}
+  \item \spxentry{save\_to\_mysql()（在 data\_loader 模块中）}, \hyperpage{6}
+  \item \spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}, \hyperpage{8}
 
   \indexspace
 
   \lettergroup{T}
+  \item \spxentry{table\_has\_data()（在 data\_loader 模块中）}, \hyperpage{6}
   \item \spxentry{train\_model()（在 model\_train 模块中）}, \hyperpage{8}
 
 \end{sphinxtheindex}

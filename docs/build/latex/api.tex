@@ -78,7 +78,7 @@
 
 
 \title{API参考}
-\date{2025 年 12 月 26 日}
+\date{2025 年 12 月 27 日}
 \release{v1.0}
 \author{lihetong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -198,28 +198,6 @@
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:module-data_visualize}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_visualize}}}}}
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/feature_engineer:module-feature_engineer}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{feature\_engineer}}}}}
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
 {\hyperref[\detokenize{api/model_train:module-model_train}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{model\_train}}}}}
 \sphinxbeforeendvarwidth
 \end{varwidth}%
@@ -243,17 +221,6 @@
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
 {\hyperref[\detokenize{api/config:module-config}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{config}}}}}
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/main:module-main}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{main}}}}}
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
@@ -308,7 +275,7 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-获取规范化原始数据 返回 :param data: 规范化列名的原始数据 :param information: 基本信息 :return:
+从数据库中获取数据或者是从csv中读取数据 获取数据基本结构 :return:返回原始数据
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -325,12 +292,56 @@
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
+{\hyperref[\detokenize{api/data_loader:data_loader.get_mysql_engine}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{get\_mysql\_engine}}}}}()
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+获取数据库连接 :return:
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_loader:data_loader.load_from_mysql}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{load\_from\_mysql}}}}}(engine, table\_name)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+从 MySQL 读取整张表数据 :param engine: 数据库 :param table\_name: 表名 :return: DataFrame原始数据集
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
 {\hyperref[\detokenize{api/data_loader:data_loader.load_raw_data}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{load\_raw\_data}}}}}()
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
 加载原始用户数据,并规范列名 \sphinxhyphen{} 读取CSV / 数据库 \sphinxhyphen{} 不做任何清洗与修改 \sphinxhyphen{} 保证“原始性” :return:返回加载好的原始数据
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_loader:data_loader.save_to_mysql}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{save\_to\_mysql}}}}}(df, table\_name, engine)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+load\_raw\_data已经清洗过列名,去除空格,可以正常存入 先使用if下面的代码导入数据,然后使用if判断数据没问题 :param df:原始数据 :param table\_name:提前设定好的表名 :param engine:数据库
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_loader:data_loader.table_has_data}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{table\_has\_data}}}}}(engine, table\_name)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -350,11 +361,9 @@
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-获取规范化原始数据
-返回
-:param data: 规范化列名的原始数据
-:param information: 基本信息
-:return:
+从数据库中获取数据或者是从csv中读取数据
+获取数据基本结构
+:return:返回原始数据
 
 \end{fulllineitems}
 
@@ -379,6 +388,40 @@
 
 \end{fulllineitems}
 
+\index{get\_mysql\_engine()（在 data\_loader 模块中）@\spxentry{get\_mysql\_engine()（在 data\_loader 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_loader:data_loader.get_mysql_engine}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{get\_mysql\_engine}}}
+{}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+获取数据库连接
+:return:
+
+\end{fulllineitems}
+
+\index{load\_from\_mysql()（在 data\_loader 模块中）@\spxentry{load\_from\_mysql()（在 data\_loader 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_loader:data_loader.load_from_mysql}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{load\_from\_mysql}}}
+{\sphinxparam{\DUrole{n}{engine}}\sphinxparamcomma \sphinxparam{\DUrole{n}{table\_name}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
+{{ $\rightarrow$ DataFrame}}
+\pysigstopsignatures
+\sphinxAtStartPar
+从 MySQL 读取整张表数据
+:param engine: 数据库
+:param table\_name: 表名
+:return: DataFrame原始数据集
+
+\end{fulllineitems}
+
 \index{load\_raw\_data()（在 data\_loader 模块中）@\spxentry{load\_raw\_data()（在 data\_loader 模块中）}}
 
 \begin{fulllineitems}
@@ -395,6 +438,54 @@
 \sphinxhyphen{} 不做任何清洗与修改
 \sphinxhyphen{} 保证“原始性”
 :return:返回加载好的原始数据
+
+\end{fulllineitems}
+
+\index{save\_to\_mysql()（在 data\_loader 模块中）@\spxentry{save\_to\_mysql()（在 data\_loader 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_loader:data_loader.save_to_mysql}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{save\_to\_mysql}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{table\_name}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}\sphinxparamcomma \sphinxparam{\DUrole{n}{engine}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+load\_raw\_data已经清洗过列名,去除空格,可以正常存入
+先使用if下面的代码导入数据,然后使用if判断数据没问题
+:param df:原始数据
+:param table\_name:提前设定好的表名
+:param engine:数据库
+
+\end{fulllineitems}
+
+\index{table\_has\_data()（在 data\_loader 模块中）@\spxentry{table\_has\_data()（在 data\_loader 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_loader:data_loader.table_has_data}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_loader.}}\sphinxbfcode{\sphinxupquote{table\_has\_data}}}
+{\sphinxparam{\DUrole{n}{engine}}\sphinxparamcomma \sphinxparam{\DUrole{n}{table\_name}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
+{{ $\rightarrow$ bool}}
+\pysigstopsignatures\begin{quote}\begin{description}
+\sphinxlineitem{参数}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleliteralstrong{\sphinxupquote{engine}}
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleliteralstrong{\sphinxupquote{table\_name}}
+
+\end{itemize}
+
+\sphinxlineitem{返回}
+\sphinxAtStartPar
+
+
+\end{description}\end{quote}
 
 \end{fulllineitems}
 
@@ -434,12 +525,12 @@
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_clean:data_clean.clean_data}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{clean\_data}}}}}(df, numeric\_cols, categorical\_cols)
+{\hyperref[\detokenize{api/data_clean:data_clean.data_clean}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_clean}}}}}(df, numeric\_cols, categorical\_cols)
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-统一保存 :return:
+数据清洗主函数 :return:
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -450,18 +541,18 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-类别型特征缺失值处理：填充为 'Unknown'
+类别型特征缺失值处理：填充为 'Unknown' :param df:原始数据集 :param categorical\_cols:类别型列 :param fill\_value:填充值，默认为 'Unknown' :return:填充后的数据
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_clean:data_clean.handle_missing_values}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{handle\_missing\_values}}}}}(df, numeric\_cols)
+{\hyperref[\detokenize{api/data_clean:data_clean.handle_missing_values}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{handle\_missing\_values}}}}}(df, numeric\_cols{[}, ...{]})
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-数值型特征缺失值处理： \sphinxhyphen{} 使用 \sphinxhyphen{}1 进行占位填充 \sphinxhyphen{} 同时构造缺失指示变量 :param df:原始数据 :param numeric\_cols:数值列 :return:
+数值型特征缺失值处理： 1.
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -472,18 +563,29 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-异常值标记，不修改原始取值
+异常值标记（不修改原始数值） 当前仅对 age 进行简单规则标记 \sphinxhyphen{} age <= 0 或 age > 100 视为异常 :param df: DataFrame :return: 添加异常标记列后的 DataFrame数据集
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_clean:data_clean.remove_duplicates}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{remove\_duplicates}}}}}(df\_new)
+{\hyperref[\detokenize{api/data_clean:data_clean.remove_duplicates}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{remove\_duplicates}}}}}(df)
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-查询是否有重复项,去除重复项 :return:
+重复值处理 \sphinxhyphen{} 统计重复行数量 \sphinxhyphen{} 删除完全重复的行（保留第一条） :param df: DataFrame :return: 去重后的 DataFrame数据集
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_clean:data_clean.save_clean_data}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{save\_clean\_data}}}}}(df, path)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+保存清洗后的数据 :param df: DataFrame :param path: 保存路径
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -492,18 +594,18 @@
 \sphinxtableafterendhook
 \sphinxatlongtableend
 \end{savenotes}
-\index{clean\_data()（在 data\_clean 模块中）@\spxentry{clean\_data()（在 data\_clean 模块中）}}
+\index{data\_clean()（在 data\_clean 模块中）@\spxentry{data\_clean()（在 data\_clean 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_clean:data_clean.clean_data}}
+\phantomsection\label{\detokenize{api/data_clean:data_clean.data_clean}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{clean\_data}}}
+{\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{data\_clean}}}
 {\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-统一保存
+数据清洗主函数
 :return:
 
 \end{fulllineitems}
@@ -515,11 +617,15 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{handle\_categorical\_missing}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{fill\_value}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{'Unknown'}}}
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
 类别型特征缺失值处理：填充为 'Unknown'
+:param df:原始数据集
+:param categorical\_cols:类别型列
+:param fill\_value:填充值，默认为 'Unknown'
+:return:填充后的数据
 
 \end{fulllineitems}
 
@@ -530,16 +636,16 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{handle\_missing\_values}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{fill\_value}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{int}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{\sphinxhyphen{}1}}}
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
 数值型特征缺失值处理：
-\sphinxhyphen{} 使用 \sphinxhyphen{}1 进行占位填充
-\sphinxhyphen{} 同时构造缺失指示变量
-:param df:原始数据
+1. 使用指定值（默认 \sphinxhyphen{}1）填充缺失
+2. 为每个数值特征创建缺失指示变量
+:param df:原始 DataFrame数据集
 :param numeric\_cols:数值列
-:return:
+:return: 填充后的数据
 
 \end{fulllineitems}
 
@@ -554,7 +660,11 @@
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-异常值标记，不修改原始取值
+异常值标记（不修改原始数值）
+当前仅对 age 进行简单规则标记
+\sphinxhyphen{} age <= 0 或 age > 100 视为异常
+:param df: DataFrame
+:return: 添加异常标记列后的 DataFrame数据集
 
 \end{fulllineitems}
 
@@ -565,12 +675,32 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{remove\_duplicates}}}
-{\sphinxparam{\DUrole{n}{df\_new}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-查询是否有重复项,去除重复项
-:return:
+重复值处理
+\sphinxhyphen{} 统计重复行数量
+\sphinxhyphen{} 删除完全重复的行（保留第一条）
+:param df: DataFrame
+:return: 去重后的 DataFrame数据集
+
+\end{fulllineitems}
+
+\index{save\_clean\_data()（在 data\_clean 模块中）@\spxentry{save\_clean\_data()（在 data\_clean 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_clean:data_clean.save_clean_data}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_clean.}}\sphinxbfcode{\sphinxupquote{save\_clean\_data}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{path}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
+{{ $\rightarrow$ None}}
+\pysigstopsignatures
+\sphinxAtStartPar
+保存清洗后的数据
+:param df: DataFrame
+:param path: 保存路径
 
 \end{fulllineitems}
 
@@ -610,23 +740,45 @@
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_explore:data_explore.categorical_by_lifecycle}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{categorical\_by\_lifecycle}}}}}(df, col)
+{\hyperref[\detokenize{api/data_explore:data_explore.analyze_feature_by_group}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{analyze\_feature\_by\_group}}}}}(df, group\_col, ...)
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-分析不同用户中，某类别特征的分布情况 :param df: :param col: :return:
+分析某个特征在不同分组中的分布 :param df: pandas DataFrame，输入的数据集 :param group\_col:str，分组列名（如'lifecycle'） :param feature\_col:str，要分析的特征列名 :param normalize:bool，是否计算比例而不是计数，默认为True（计算比例） :return:DataFrame，交叉表显示特征在不同分组中的分布
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_explore:data_explore.explore_categorical_features}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{explore\_categorical\_features}}}}}(df)
+{\hyperref[\detokenize{api/data_explore:data_explore.data_explore}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{data\_explore}}}}}()
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-类别型特征分布 :return:返回用户各类别数量
+展示所有探索的数据 :return:
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_explore:data_explore.explore_categorical_features}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{explore\_categorical\_features}}}}}(df{[}, top\_n{]})
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+分析类别型特征的分布情况 :param df:输入原始的数据集 :param top\_n:int，显示每个类别的前N个值，默认显示前10个 :return:字典，键为类别型列名，值为该列的值分布Series
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_explore:data_explore.explore_correlation}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{explore\_correlation}}}}}(df{[}, method, threshold{]})
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+分析数值特征之间的相关性 :param df:DataFrame，原始数据 :param method: 相关系数计算方法 ('pearson', 'spearman', 'kendall'),默认 pearson :param threshold: 相关性阈值，用于筛选强相关特征对 :return:     corr\_matrix : 相关性矩阵     strong\_corr : 强相关特征对（DataFrame）
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -637,7 +789,7 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-统计各字段缺失率 :param df: :return:
+统计各字段缺失率 :return:DataFrame，包含每个字段的缺失数量和缺失率，按缺失率降序排列
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -648,7 +800,18 @@
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-数值型特征描述性统计 :param df:原始的数据 :return:返回数值型特征的描述性统计信息,并转置结果（T）使特征作为行显示
+分析数值型特征的描述性统计 :param df:输入原始的数据集 :return:DataFrame，包含各数值型特征的统计量（计数、均值、标准差、最小值、25\%、50\%、75\%、最大值）
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/data_explore:data_explore.split_columns_by_type}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{split\_columns\_by\_type}}}}}(df)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+自动划分数值列和类别列 :param df: DataFrame数据集 :return: 数值列和类别列
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -657,20 +820,38 @@
 \sphinxtableafterendhook
 \sphinxatlongtableend
 \end{savenotes}
-\index{categorical\_by\_lifecycle()（在 data\_explore 模块中）@\spxentry{categorical\_by\_lifecycle()（在 data\_explore 模块中）}}
+\index{analyze\_feature\_by\_group()（在 data\_explore 模块中）@\spxentry{analyze\_feature\_by\_group()（在 data\_explore 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_explore:data_explore.categorical_by_lifecycle}}
+\phantomsection\label{\detokenize{api/data_explore:data_explore.analyze_feature_by_group}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{categorical\_by\_lifecycle}}}
-{\sphinxparam{\DUrole{n}{df}}\sphinxparamcomma \sphinxparam{\DUrole{n}{col}}}
+{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{analyze\_feature\_by\_group}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{group\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}\sphinxparamcomma \sphinxparam{\DUrole{n}{feature\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}\sphinxparamcomma \sphinxparam{\DUrole{n}{normalize}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{bool}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{True}}}
+{{ $\rightarrow$ DataFrame}}
+\pysigstopsignatures
+\sphinxAtStartPar
+分析某个特征在不同分组中的分布
+:param df: pandas DataFrame，输入的数据集
+:param group\_col:str，分组列名（如'lifecycle'）
+:param feature\_col:str，要分析的特征列名
+:param normalize:bool，是否计算比例而不是计数，默认为True（计算比例）
+:return:DataFrame，交叉表显示特征在不同分组中的分布
+
+\end{fulllineitems}
+
+\index{data\_explore()（在 data\_explore 模块中）@\spxentry{data\_explore()（在 data\_explore 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_explore:data_explore.data_explore}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{data\_explore}}}
+{}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-分析不同用户中，某类别特征的分布情况
-:param df:
-:param col:
+展示所有探索的数据
 :return:
 
 \end{fulllineitems}
@@ -682,12 +863,39 @@
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{explore\_categorical\_features}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{top\_n}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{int}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{10}}}
 {{ $\rightarrow$ dict}}
 \pysigstopsignatures
 \sphinxAtStartPar
-类别型特征分布
-:return:返回用户各类别数量
+分析类别型特征的分布情况
+:param df:输入原始的数据集
+:param top\_n:int，显示每个类别的前N个值，默认显示前10个
+:return:字典，键为类别型列名，值为该列的值分布Series
+
+\end{fulllineitems}
+
+\index{explore\_correlation()（在 data\_explore 模块中）@\spxentry{explore\_correlation()（在 data\_explore 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/data_explore:data_explore.explore_correlation}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{explore\_correlation}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{method}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{'pearson'}}\sphinxparamcomma \sphinxparam{\DUrole{n}{threshold}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{float}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{0.7}}}
+{{ $\rightarrow$ DataFrame}}
+\pysigstopsignatures
+\sphinxAtStartPar
+分析数值特征之间的相关性
+:param df:DataFrame，原始数据
+:param method: 相关系数计算方法 ('pearson', 'spearman', 'kendall'),默认 pearson
+:param threshold: 相关性阈值，用于筛选强相关特征对
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+corr\_matrix : 相关性矩阵
+strong\_corr : 强相关特征对（DataFrame）
+\end{quote}
 
 \end{fulllineitems}
 
@@ -703,8 +911,7 @@
 \pysigstopsignatures
 \sphinxAtStartPar
 统计各字段缺失率
-:param df:
-:return:
+:return:DataFrame，包含每个字段的缺失数量和缺失率，按缺失率降序排列
 
 \end{fulllineitems}
 
@@ -719,267 +926,26 @@
 {{ $\rightarrow$ DataFrame}}
 \pysigstopsignatures
 \sphinxAtStartPar
-数值型特征描述性统计
-:param df:原始的数据
-:return:返回数值型特征的描述性统计信息,并转置结果（T）使特征作为行显示
+分析数值型特征的描述性统计
+:param df:输入原始的数据集
+:return:DataFrame，包含各数值型特征的统计量（计数、均值、标准差、最小值、25\%、50\%、75\%、最大值）
 
 \end{fulllineitems}
 
-
-\sphinxstepscope
-
-
-\section{data\_visualize}
-\label{\detokenize{api/data_visualize:module-data_visualize}}\label{\detokenize{api/data_visualize:data-visualize}}\label{\detokenize{api/data_visualize::doc}}\index{module@\spxentry{module}!data\_visualize@\spxentry{data\_visualize}}\index{data\_visualize@\spxentry{data\_visualize}!module@\spxentry{module}}\subsubsection*{Functions}
-
-
-\begin{savenotes}
-\sphinxatlongtablestart
-\sphinxthistablewithglobalstyle
-\sphinxthistablewithnovlinesstyle
-\makeatletter
-  \LTleft \@totalleftmargin plus1fill
-  \LTright\dimexpr\columnwidth-\@totalleftmargin-\linewidth\relax plus1fill
-\makeatother
-\begin{longtable}{\X{1}{2}\X{1}{2}}
-\sphinxtoprule
-\endfirsthead
-
-\multicolumn{2}{c}{\sphinxnorowcolor
-    \makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} 接上页}}%
-}\\
-\sphinxtoprule
-\endhead
-
-\sphinxbottomrule
-\multicolumn{2}{r}{\sphinxnorowcolor
-    \makebox[0pt][r]{\sphinxtablecontinued{续下页}}%
-}\\
-\endfoot
-
-\endlastfoot
-\sphinxtableatstartofbodyhook
-\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_box_by_category}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_box\_by\_category}}}}}(df, cat\_col, num\_col)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-类别\sphinxhyphen{}数值关系箱线图
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_categorical_by_lifecycle}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_categorical\_by\_lifecycle}}}}}(df, col)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_categorical_distribution}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_categorical\_distribution}}}}}(df, col)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-类别型特征分布
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_correlation_heatmap}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_correlation\_heatmap}}}}}(df)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-数值特征相关性热力图
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/data_visualize:data_visualize.plot_numeric_distribution}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{plot\_numeric\_distribution}}}}}(df, col)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-数值型特征分布
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxbottomrule
-\end{longtable}
-\sphinxtableafterendhook
-\sphinxatlongtableend
-\end{savenotes}
-\index{plot\_box\_by\_category()（在 data\_visualize 模块中）@\spxentry{plot\_box\_by\_category()（在 data\_visualize 模块中）}}
+\index{split\_columns\_by\_type()（在 data\_explore 模块中）@\spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_box_by_category}}
+\phantomsection\label{\detokenize{api/data_explore:data_explore.split_columns_by_type}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_box\_by\_category}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{cat\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}\sphinxparamcomma \sphinxparam{\DUrole{n}{num\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
-{}
-\pysigstopsignatures
-\sphinxAtStartPar
-类别\sphinxhyphen{}数值关系箱线图
-
-\end{fulllineitems}
-
-\index{plot\_categorical\_by\_lifecycle()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_by\_lifecycle()（在 data\_visualize 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_categorical_by_lifecycle}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_categorical\_by\_lifecycle}}}
-{\sphinxparam{\DUrole{n}{df}}\sphinxparamcomma \sphinxparam{\DUrole{n}{col}}}
-{}
-\pysigstopsignatures
-\end{fulllineitems}
-
-\index{plot\_categorical\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_categorical_distribution}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_categorical\_distribution}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
-{}
-\pysigstopsignatures
-\sphinxAtStartPar
-类别型特征分布
-
-\end{fulllineitems}
-
-\index{plot\_correlation\_heatmap()（在 data\_visualize 模块中）@\spxentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_correlation_heatmap}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_correlation\_heatmap}}}
+{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{split\_columns\_by\_type}}}
 {\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-数值特征相关性热力图
-
-\end{fulllineitems}
-
-\index{plot\_numeric\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_visualize:data_visualize.plot_numeric_distribution}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_visualize.}}\sphinxbfcode{\sphinxupquote{plot\_numeric\_distribution}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
-{}
-\pysigstopsignatures
-\sphinxAtStartPar
-数值型特征分布
-
-\end{fulllineitems}
-
-
-\sphinxstepscope
-
-
-\section{feature\_engineer}
-\label{\detokenize{api/feature_engineer:module-feature_engineer}}\label{\detokenize{api/feature_engineer:feature-engineer}}\label{\detokenize{api/feature_engineer::doc}}\index{module@\spxentry{module}!feature\_engineer@\spxentry{feature\_engineer}}\index{feature\_engineer@\spxentry{feature\_engineer}!module@\spxentry{module}}\subsubsection*{Functions}
-
-
-\begin{savenotes}
-\sphinxatlongtablestart
-\sphinxthistablewithglobalstyle
-\sphinxthistablewithnovlinesstyle
-\makeatletter
-  \LTleft \@totalleftmargin plus1fill
-  \LTright\dimexpr\columnwidth-\@totalleftmargin-\linewidth\relax plus1fill
-\makeatother
-\begin{longtable}{\X{1}{2}\X{1}{2}}
-\sphinxtoprule
-\endfirsthead
-
-\multicolumn{2}{c}{\sphinxnorowcolor
-    \makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} 接上页}}%
-}\\
-\sphinxtoprule
-\endhead
-
-\sphinxbottomrule
-\multicolumn{2}{r}{\sphinxnorowcolor
-    \makebox[0pt][r]{\sphinxtablecontinued{续下页}}%
-}\\
-\endfoot
-
-\endlastfoot
-\sphinxtableatstartofbodyhook
-\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/feature_engineer:feature_engineer.build_features}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{build\_features}}}}}(df, categorical\_cols)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-特征工程主入口
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/feature_engineer:feature_engineer.one_hot_encode}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{one\_hot\_encode}}}}}(df, categorical\_cols)
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-对类别型特征进行 One\sphinxhyphen{}Hot 编码 只需要对类别列进行翻译
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxbottomrule
-\end{longtable}
-\sphinxtableafterendhook
-\sphinxatlongtableend
-\end{savenotes}
-\index{build\_features()（在 feature\_engineer 模块中）@\spxentry{build\_features()（在 feature\_engineer 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.build_features}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{build\_features}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
-{{ $\rightarrow$ DataFrame}}
-\pysigstopsignatures
-\sphinxAtStartPar
-特征工程主入口
-
-\end{fulllineitems}
-
-\index{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.one_hot_encode}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{one\_hot\_encode}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}}
-{{ $\rightarrow$ DataFrame}}
-\pysigstopsignatures
-\sphinxAtStartPar
-对类别型特征进行 One\sphinxhyphen{}Hot 编码
-只需要对类别列进行翻译
+自动划分数值列和类别列
+:param df: DataFrame数据集
+:return: 数值列和类别列
 
 \end{fulllineitems}
 
@@ -1122,68 +1088,6 @@
 
 \section{config}
 \label{\detokenize{api/config:module-config}}\label{\detokenize{api/config:config}}\label{\detokenize{api/config::doc}}\index{module@\spxentry{module}!config@\spxentry{config}}\index{config@\spxentry{config}!module@\spxentry{module}}
-\sphinxstepscope
-
-
-\section{main}
-\label{\detokenize{api/main:module-main}}\label{\detokenize{api/main:main}}\label{\detokenize{api/main::doc}}\index{module@\spxentry{module}!main@\spxentry{main}}\index{main@\spxentry{main}!module@\spxentry{module}}\subsubsection*{Functions}
-
-
-\begin{savenotes}
-\sphinxatlongtablestart
-\sphinxthistablewithglobalstyle
-\sphinxthistablewithnovlinesstyle
-\makeatletter
-  \LTleft \@totalleftmargin plus1fill
-  \LTright\dimexpr\columnwidth-\@totalleftmargin-\linewidth\relax plus1fill
-\makeatother
-\begin{longtable}{\X{1}{2}\X{1}{2}}
-\sphinxtoprule
-\endfirsthead
-
-\multicolumn{2}{c}{\sphinxnorowcolor
-    \makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} 接上页}}%
-}\\
-\sphinxtoprule
-\endhead
-
-\sphinxbottomrule
-\multicolumn{2}{r}{\sphinxnorowcolor
-    \makebox[0pt][r]{\sphinxtablecontinued{续下页}}%
-}\\
-\endfoot
-
-\endlastfoot
-\sphinxtableatstartofbodyhook
-\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-{\hyperref[\detokenize{api/main:main.main}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{main}}}}}()
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
-\sphinxAtStartPar
-
-\sphinxbeforeendvarwidth
-\end{varwidth}%
-\\
-\sphinxbottomrule
-\end{longtable}
-\sphinxtableafterendhook
-\sphinxatlongtableend
-\end{savenotes}
-\index{main()（在 main 模块中）@\spxentry{main()（在 main 模块中）}}
-
-\begin{fulllineitems}
-\phantomsection\label{\detokenize{api/main:main.main}}
-\pysigstartsignatures
-\pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{main.}}\sphinxbfcode{\sphinxupquote{main}}}
-{}
-{}
-\pysigstopsignatures
-\end{fulllineitems}
-
-
 
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
@@ -1280,13 +1184,8 @@ Sphinx \sphinxhyphen{} 文档生成
 \item\relax\sphinxstyleindexentry{data\_clean}\sphinxstyleindexpageref{api/data_clean:\detokenize{module-data_clean}}
 \item\relax\sphinxstyleindexentry{data\_explore}\sphinxstyleindexpageref{api/data_explore:\detokenize{module-data_explore}}
 \item\relax\sphinxstyleindexentry{data\_loader}\sphinxstyleindexpageref{api/data_loader:\detokenize{module-data_loader}}
-\item\relax\sphinxstyleindexentry{data\_visualize}\sphinxstyleindexpageref{api/data_visualize:\detokenize{module-data_visualize}}
-\indexspace
-\bigletter{f}
-\item\relax\sphinxstyleindexentry{feature\_engineer}\sphinxstyleindexpageref{api/feature_engineer:\detokenize{module-feature_engineer}}
 \indexspace
 \bigletter{m}
-\item\relax\sphinxstyleindexentry{main}\sphinxstyleindexpageref{api/main:\detokenize{module-main}}
 \item\relax\sphinxstyleindexentry{model\_evaluate}\sphinxstyleindexpageref{api/model_evaluate:\detokenize{module-model_evaluate}}
 \item\relax\sphinxstyleindexentry{model\_train}\sphinxstyleindexpageref{api/model_train:\detokenize{module-model_train}}
 \end{sphinxtheindex}

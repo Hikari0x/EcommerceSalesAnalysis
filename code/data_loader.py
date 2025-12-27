@@ -4,7 +4,6 @@ import pandas as pd
 
 import config
 from pprint import pprint
-import pymysql
 from sqlalchemy import create_engine
 
 

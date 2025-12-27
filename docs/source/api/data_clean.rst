@@ -8,9 +8,10 @@
 
    .. autosummary::
    
-      clean_data
+      data_clean
       handle_categorical_missing
       handle_missing_values
       mark_abnormal_values
       remove_duplicates
+      save_clean_data
    

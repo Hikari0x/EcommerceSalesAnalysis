@@ -2,39 +2,33 @@
 \indexentry{data\_loader@\spxentry{data\_loader}!module@\spxentry{module}}{5}
 \indexentry{data\_loader()（在 data\_loader 模块中）@\spxentry{data\_loader()（在 data\_loader 模块中）}}{5}
 \indexentry{get\_basic\_info()（在 data\_loader 模块中）@\spxentry{get\_basic\_info()（在 data\_loader 模块中）}}{5}
-\indexentry{load\_raw\_data()（在 data\_loader 模块中）@\spxentry{load\_raw\_data()（在 data\_loader 模块中）}}{5}
+\indexentry{get\_mysql\_engine()（在 data\_loader 模块中）@\spxentry{get\_mysql\_engine()（在 data\_loader 模块中）}}{6}
+\indexentry{load\_from\_mysql()（在 data\_loader 模块中）@\spxentry{load\_from\_mysql()（在 data\_loader 模块中）}}{6}
+\indexentry{load\_raw\_data()（在 data\_loader 模块中）@\spxentry{load\_raw\_data()（在 data\_loader 模块中）}}{6}
+\indexentry{save\_to\_mysql()（在 data\_loader 模块中）@\spxentry{save\_to\_mysql()（在 data\_loader 模块中）}}{6}
+\indexentry{table\_has\_data()（在 data\_loader 模块中）@\spxentry{table\_has\_data()（在 data\_loader 模块中）}}{6}
 \indexentry{module@\spxentry{module}!data\_clean@\spxentry{data\_clean}}{6}
 \indexentry{data\_clean@\spxentry{data\_clean}!module@\spxentry{module}}{6}
-\indexentry{clean\_data()（在 data\_clean 模块中）@\spxentry{clean\_data()（在 data\_clean 模块中）}}{6}
+\indexentry{data\_clean()（在 data\_clean 模块中）@\spxentry{data\_clean()（在 data\_clean 模块中）}}{6}
 \indexentry{handle\_categorical\_missing()（在 data\_clean 模块中）@\spxentry{handle\_categorical\_missing()（在 data\_clean 模块中）}}{6}
-\indexentry{handle\_missing\_values()（在 data\_clean 模块中）@\spxentry{handle\_missing\_values()（在 data\_clean 模块中）}}{6}
-\indexentry{mark\_abnormal\_values()（在 data\_clean 模块中）@\spxentry{mark\_abnormal\_values()（在 data\_clean 模块中）}}{6}
-\indexentry{remove\_duplicates()（在 data\_clean 模块中）@\spxentry{remove\_duplicates()（在 data\_clean 模块中）}}{6}
-\indexentry{module@\spxentry{module}!data\_explore@\spxentry{data\_explore}}{6}
-\indexentry{data\_explore@\spxentry{data\_explore}!module@\spxentry{module}}{6}
-\indexentry{categorical\_by\_lifecycle()（在 data\_explore 模块中）@\spxentry{categorical\_by\_lifecycle()（在 data\_explore 模块中）}}{6}
-\indexentry{explore\_categorical\_features()（在 data\_explore 模块中）@\spxentry{explore\_categorical\_features()（在 data\_explore 模块中）}}{6}
-\indexentry{explore\_missing\_values()（在 data\_explore 模块中）@\spxentry{explore\_missing\_values()（在 data\_explore 模块中）}}{6}
-\indexentry{explore\_numeric\_features()（在 data\_explore 模块中）@\spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}}{7}
-\indexentry{module@\spxentry{module}!data\_visualize@\spxentry{data\_visualize}}{7}
-\indexentry{data\_visualize@\spxentry{data\_visualize}!module@\spxentry{module}}{7}
-\indexentry{plot\_box\_by\_category()（在 data\_visualize 模块中）@\spxentry{plot\_box\_by\_category()（在 data\_visualize 模块中）}}{7}
-\indexentry{plot\_categorical\_by\_lifecycle()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_by\_lifecycle()（在 data\_visualize 模块中）}}{7}
-\indexentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_categorical\_distribution()（在 data\_visualize 模块中）}}{7}
-\indexentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）@\spxentry{plot\_correlation\_heatmap()（在 data\_visualize 模块中）}}{7}
-\indexentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}}{7}
-\indexentry{module@\spxentry{module}!feature\_engineer@\spxentry{feature\_engineer}}{7}
-\indexentry{feature\_engineer@\spxentry{feature\_engineer}!module@\spxentry{module}}{7}
-\indexentry{build\_features()（在 feature\_engineer 模块中）@\spxentry{build\_features()（在 feature\_engineer 模块中）}}{7}
-\indexentry{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}{7}
-\indexentry{module@\spxentry{module}!model\_train@\spxentry{model\_train}}{7}
-\indexentry{model\_train@\spxentry{model\_train}!module@\spxentry{module}}{7}
+\indexentry{handle\_missing\_values()（在 data\_clean 模块中）@\spxentry{handle\_missing\_values()（在 data\_clean 模块中）}}{7}
+\indexentry{mark\_abnormal\_values()（在 data\_clean 模块中）@\spxentry{mark\_abnormal\_values()（在 data\_clean 模块中）}}{7}
+\indexentry{remove\_duplicates()（在 data\_clean 模块中）@\spxentry{remove\_duplicates()（在 data\_clean 模块中）}}{7}
+\indexentry{save\_clean\_data()（在 data\_clean 模块中）@\spxentry{save\_clean\_data()（在 data\_clean 模块中）}}{7}
+\indexentry{module@\spxentry{module}!data\_explore@\spxentry{data\_explore}}{7}
+\indexentry{data\_explore@\spxentry{data\_explore}!module@\spxentry{module}}{7}
+\indexentry{analyze\_feature\_by\_group()（在 data\_explore 模块中）@\spxentry{analyze\_feature\_by\_group()（在 data\_explore 模块中）}}{7}
+\indexentry{data\_explore()（在 data\_explore 模块中）@\spxentry{data\_explore()（在 data\_explore 模块中）}}{8}
+\indexentry{explore\_categorical\_features()（在 data\_explore 模块中）@\spxentry{explore\_categorical\_features()（在 data\_explore 模块中）}}{8}
+\indexentry{explore\_correlation()（在 data\_explore 模块中）@\spxentry{explore\_correlation()（在 data\_explore 模块中）}}{8}
+\indexentry{explore\_missing\_values()（在 data\_explore 模块中）@\spxentry{explore\_missing\_values()（在 data\_explore 模块中）}}{8}
+\indexentry{explore\_numeric\_features()（在 data\_explore 模块中）@\spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}}{8}
+\indexentry{split\_columns\_by\_type()（在 data\_explore 模块中）@\spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}}{8}
+\indexentry{module@\spxentry{module}!model\_train@\spxentry{model\_train}}{8}
+\indexentry{model\_train@\spxentry{model\_train}!module@\spxentry{module}}{8}
 \indexentry{train\_model()（在 model\_train 模块中）@\spxentry{train\_model()（在 model\_train 模块中）}}{8}
 \indexentry{module@\spxentry{module}!model\_evaluate@\spxentry{model\_evaluate}}{8}
 \indexentry{model\_evaluate@\spxentry{model\_evaluate}!module@\spxentry{module}}{8}
 \indexentry{evaluate\_model()（在 model\_evaluate 模块中）@\spxentry{evaluate\_model()（在 model\_evaluate 模块中）}}{8}
-\indexentry{module@\spxentry{module}!config@\spxentry{config}}{8}
-\indexentry{config@\spxentry{config}!module@\spxentry{module}}{8}
-\indexentry{module@\spxentry{module}!main@\spxentry{main}}{8}
-\indexentry{main@\spxentry{main}!module@\spxentry{module}}{8}
-\indexentry{main()（在 main 模块中）@\spxentry{main()（在 main 模块中）}}{8}
+\indexentry{module@\spxentry{module}!config@\spxentry{config}}{9}
+\indexentry{config@\spxentry{config}!module@\spxentry{module}}{9}
