@@ -37,10 +37,14 @@ def main():
     df_new, scaler, encoders = build_features_for_dl(df_new)
     # 简单模型训练
     print(f'{'-' * 30}简单模型训练{'-' * 30}')
-    model, metrics = train_and_evaluate(df_new, TARGET_COL,model_type='rf')
+    model, metrics, cv_metrics = train_and_evaluate(df_new, TARGET_COL, model_type='rf')
     print(f'模型信息:{model}')
     print('模型评估指标:')
     pprint(metrics)
+    print(
+        f"交叉验证 F1(macro)：均值 = {cv_metrics['cv_mean']:.4f}, "
+        f"标准差 = {cv_metrics['cv_std']:.4f}"
+    )
 
     print(f'{'=' * 30}项目完成{'=' * 30}')
 

@@ -54,7 +54,16 @@ def _evaluate(model, x_test, y_test) -> dict:
         )
     }
 
+
 def cross_validate_model(model, x, y, cv=5):
+    """
+    交叉验证
+    :param model: 模型
+    :param x: 特征
+    :param y: 标签
+    :param cv: 交叉验证次数
+    :return: 交叉验证结果
+    """
     scores = cross_val_score(
         model,
         x,
@@ -63,9 +72,11 @@ def cross_validate_model(model, x, y, cv=5):
         scoring='f1_macro'
     )
     return {
-        "cv_mean": scores.mean(),
-        "cv_std": scores.std()
+        'cv_mean': scores.mean(),
+        'cv_std': scores.std()
     }
+
+
 def train_and_evaluate(
         df: pd.DataFrame,
         target_col: str,
@@ -99,8 +110,10 @@ def train_and_evaluate(
     dump(model, f'../model/{model_type}.joblib')
     # 5. 评估模型
     metrics = _evaluate(model, x_test, y_test)
+    # 6. 交叉验证
+    cv_metrics = cross_validate_model(model, x, y)
 
-    return model, metrics
+    return model, metrics, cv_metrics
 
 
 if __name__ == '__main__':
