@@ -5,7 +5,7 @@ import seaborn as sns
 import pandas as pd
 from data_loader import data_loader
 from data_clean import data_clean
-from data_explore import data_explore,split_columns_by_type
+from data_explore import data_explore,split_columns_clean
 
 plt.rcParams['font.family'] = 'Heiti TC'
 
@@ -70,7 +70,7 @@ def data_visualize()-> None:
     数据可视化总入口
     :return:
     """
-    numeric_cols, categorical_cols = split_columns_by_type(data_loader())
+    numeric_cols, categorical_cols = split_columns_clean(data_loader())
     data_clean(data_loader(),numeric_cols, categorical_cols)
     print(f'数据可视化开始')
     plot_numeric_distribution(data_loader(), numeric_cols)

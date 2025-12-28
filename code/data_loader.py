@@ -111,8 +111,8 @@ def data_loader() -> pd.DataFrame:
     :return:返回原始数据
     """
     save_to_mysql(load_raw_data(), config.TABLE_NAME, get_mysql_engine())
-    # df = load_raw_data()
-    df = load_from_mysql(get_mysql_engine(), config.TABLE_NAME)
+    df = load_raw_data()
+    # df = load_from_mysql(get_mysql_engine(), config.TABLE_NAME)
     print(f'基本数据信息')
     info = get_basic_info()
     pprint(info)

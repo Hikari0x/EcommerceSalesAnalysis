@@ -167,7 +167,7 @@ def data_explore():
     correlation = explore_correlation(df, 'pearson', 0.7)
     print(correlation)
     print(f'自动划分数值列和类别列')
-    numeric_cols, categorical_cols = split_columns_by_type(df)
+    numeric_cols, categorical_cols = split_columns_clean(df)
     print(f'建模列:{numeric_cols}'
           f'类别列:{categorical_cols}')
 

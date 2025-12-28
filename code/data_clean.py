@@ -4,7 +4,7 @@ import pandas as pd
 
 import config
 import data_loader
-import data_explore
+from data_explore import split_columns_clean
 
 
 def handle_missing_values(
@@ -111,6 +111,6 @@ def data_clean(
     return df_new
 
 if __name__ == '__main__':
-    numeric_cols, categorical_cols = data_explore.split_columns_by_type(data_loader.load_raw_data())
+    numeric_cols, categorical_cols = split_columns_clean(data_loader.load_raw_data())
     data_clean(data_loader.load_raw_data(), numeric_cols, categorical_cols)
     print(f'{time.time() - config.START:.2f}s')
