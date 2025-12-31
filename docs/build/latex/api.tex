@@ -78,7 +78,7 @@
 
 
 \title{API参考}
-\date{2025 年 12 月 27 日}
+\date{2025 年 12 月 29 日}
 \release{v1.0}
 \author{lihetong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -221,6 +221,17 @@
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
 {\hyperref[\detokenize{api/config:module-config}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{config}}}}}
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/main:module-main}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{main}}}}}
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
@@ -806,12 +817,12 @@ load\_raw\_data已经清洗过列名,去除空格,可以正常存入
 \\
 \sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/data_explore:data_explore.split_columns_by_type}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{split\_columns\_by\_type}}}}}(df)
+{\hyperref[\detokenize{api/data_explore:data_explore.split_columns_clean}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{split\_columns\_clean}}}}}(df)
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-自动划分数值列和类别列 :param df: DataFrame数据集 :return: 数值列和类别列
+用于清洗数据划分列 :param df: DataFrame原始数据 :return: 数值列和类别列
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -932,19 +943,19 @@ strong\_corr : 强相关特征对（DataFrame）
 
 \end{fulllineitems}
 
-\index{split\_columns\_by\_type()（在 data\_explore 模块中）@\spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}}
+\index{split\_columns\_clean()（在 data\_explore 模块中）@\spxentry{split\_columns\_clean()（在 data\_explore 模块中）}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{api/data_explore:data_explore.split_columns_by_type}}
+\phantomsection\label{\detokenize{api/data_explore:data_explore.split_columns_clean}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{split\_columns\_by\_type}}}
+{\sphinxcode{\sphinxupquote{data\_explore.}}\sphinxbfcode{\sphinxupquote{split\_columns\_clean}}}
 {\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-自动划分数值列和类别列
-:param df: DataFrame数据集
+用于清洗数据划分列
+:param df: DataFrame原始数据
 :return: 数值列和类别列
 
 \end{fulllineitems}
@@ -1155,12 +1166,23 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableatstartofbodyhook
 \begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-{\hyperref[\detokenize{api/feature_engineer:feature_engineer.build_features_for_dl}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{build\_features\_for\_dl}}}}}(df, numeric\_cols, ...)
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.add_missing_indicators}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{add\_missing\_indicators}}}}}(df, numeric\_cols{[}, ...{]})
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-深度学习模型特征工程主入口 特点： \sphinxhyphen{} 数值特征：标准化 \sphinxhyphen{} 类别特征：整数编码（Embedding 用） \sphinxhyphen{} 不做 One\sphinxhyphen{}Hot :param df:DataFrame清洗好的数据集 \sphinxhyphen{} numeric\_cols:数值型列名 \sphinxhyphen{} categorical\_cols:类别型列名 :return:     df\_new:DataFrame编码后的数据     scaler:数值特征标准化器
+为数值型特征添加缺失值指示变量 :param df:DataFrame清洗好的数据集 :param numeric\_cols:需要处理缺失值的数值型列名列表 :param fill\_value:表示缺失值的占位值，默认是 \sphinxhyphen{}1 :return: 处理后的
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.build_features_for_dl}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{build\_features\_for\_dl}}}}}(df{[}, scaler{]})
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+深度学习模型特征工程主入口 特点： \sphinxhyphen{} 数值特征：标准化 \sphinxhyphen{} 类别特征：整数编码（Embedding 用） \sphinxhyphen{} 不做 One\sphinxhyphen{}Hot :param df:DataFrame清洗好的数据集 :return:     df\_new:DataFrame编码后的数据     scaler:数值特征标准化器     encoders:编码器
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -1204,7 +1226,18 @@ strong\_corr : 强相关特征对（DataFrame）
 \end{varwidth}%
 &\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
 \sphinxAtStartPar
-数值特征标准化 :param df:DataFrame清洗好的数据集 :param numeric\_cols:数值型列名 :param scaler:训练阶段传 None，预测阶段传已有 scaler :return:     df\_new:DataFrame标准化后的数据     scaler:
+数值特征标准化 :param df:DataFrame :param numeric\_cols:数值型列名 :param scaler:训练阶段传 None，预测阶段传已有 scaler :return:     df\_new:DataFrame标准化后的数据     scaler:
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxhline\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/feature_engineer:feature_engineer.split_columns_by_type}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{split\_columns\_by\_type}}}}}(df, target\_col)
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+自动划分需要标准化的列,数值列和缺失值指示异常列 :param df: DataFrame添加指示变量的数据 :return:     numeric\_cols: 标准化列     categorical\_cols: 类别列     indicator\_cols: 缺失值指示列和异常列
 \sphinxbeforeendvarwidth
 \end{varwidth}%
 \\
@@ -1213,6 +1246,25 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxtableafterendhook
 \sphinxatlongtableend
 \end{savenotes}
+\index{add\_missing\_indicators()（在 feature\_engineer 模块中）@\spxentry{add\_missing\_indicators()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.add_missing_indicators}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{add\_missing\_indicators}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{missing\_value}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{int\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }float}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{\sphinxhyphen{}1}}}
+{{ $\rightarrow$ DataFrame}}
+\pysigstopsignatures
+\sphinxAtStartPar
+为数值型特征添加缺失值指示变量
+:param df:DataFrame清洗好的数据集
+:param numeric\_cols:需要处理缺失值的数值型列名列表
+:param fill\_value:表示缺失值的占位值，默认是 \sphinxhyphen{}1
+:return: 处理后的
+
+\end{fulllineitems}
+
 \index{build\_features\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）}}
 
 \begin{fulllineitems}
@@ -1220,7 +1272,7 @@ strong\_corr : 强相关特征对（DataFrame）
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{build\_features\_for\_dl}}}
-{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{numeric\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{categorical\_cols}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{list}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scaler}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{StandardScaler\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }None}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{None}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scaler}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{StandardScaler\DUrole{w}{ }\DUrole{p}{|}\DUrole{w}{ }None}\DUrole{w}{ }\DUrole{o}{=}\DUrole{w}{ }\DUrole{default_value}{None}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
@@ -1230,14 +1282,13 @@ strong\_corr : 强相关特征对（DataFrame）
 \sphinxhyphen{} 类别特征：整数编码（Embedding 用）
 \sphinxhyphen{} 不做 One\sphinxhyphen{}Hot
 :param df:DataFrame清洗好的数据集
-\sphinxhyphen{} numeric\_cols:数值型列名
-\sphinxhyphen{} categorical\_cols:类别型列名
 :return:
 \begin{quote}
 
 \sphinxAtStartPar
 df\_new:DataFrame编码后的数据
 scaler:数值特征标准化器
+encoders:编码器
 \end{quote}
 
 \end{fulllineitems}
@@ -1326,7 +1377,7 @@ encoders:编码器
 \pysigstopsignatures
 \sphinxAtStartPar
 数值特征标准化
-:param df:DataFrame清洗好的数据集
+:param df:DataFrame
 :param numeric\_cols:数值型列名
 :param scaler:训练阶段传 None，预测阶段传已有 scaler
 :return:
@@ -1339,12 +1390,102 @@ scaler:
 
 \end{fulllineitems}
 
+\index{split\_columns\_by\_type()（在 feature\_engineer 模块中）@\spxentry{split\_columns\_by\_type()（在 feature\_engineer 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/feature_engineer:feature_engineer.split_columns_by_type}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{feature\_engineer.}}\sphinxbfcode{\sphinxupquote{split\_columns\_by\_type}}}
+{\sphinxparam{\DUrole{n}{df}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{DataFrame}}\sphinxparamcomma \sphinxparam{\DUrole{n}{target\_col}\DUrole{p}{:}\DUrole{w}{ }\DUrole{n}{str}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+自动划分需要标准化的列,数值列和缺失值指示异常列
+:param df: DataFrame添加指示变量的数据
+:return:
+\begin{quote}
+
+\sphinxAtStartPar
+numeric\_cols: 标准化列
+categorical\_cols: 类别列
+indicator\_cols: 缺失值指示列和异常列
+\end{quote}
+
+\end{fulllineitems}
+
 
 \sphinxstepscope
 
 
 \section{config}
 \label{\detokenize{api/config:module-config}}\label{\detokenize{api/config:config}}\label{\detokenize{api/config::doc}}\index{module@\spxentry{module}!config@\spxentry{config}}\index{config@\spxentry{config}!module@\spxentry{module}}
+\sphinxstepscope
+
+
+\section{main}
+\label{\detokenize{api/main:module-main}}\label{\detokenize{api/main:main}}\label{\detokenize{api/main::doc}}\index{module@\spxentry{module}!main@\spxentry{main}}\index{main@\spxentry{main}!module@\spxentry{module}}\subsubsection*{Functions}
+
+
+\begin{savenotes}
+\sphinxatlongtablestart
+\sphinxthistablewithglobalstyle
+\sphinxthistablewithnovlinesstyle
+\makeatletter
+  \LTleft \@totalleftmargin plus1fill
+  \LTright\dimexpr\columnwidth-\@totalleftmargin-\linewidth\relax plus1fill
+\makeatother
+\begin{longtable}{\X{1}{2}\X{1}{2}}
+\sphinxtoprule
+\endfirsthead
+
+\multicolumn{2}{c}{\sphinxnorowcolor
+    \makebox[0pt]{\sphinxtablecontinued{\tablename\ \thetable{} \textendash{} 接上页}}%
+}\\
+\sphinxtoprule
+\endhead
+
+\sphinxbottomrule
+\multicolumn{2}{r}{\sphinxnorowcolor
+    \makebox[0pt][r]{\sphinxtablecontinued{续下页}}%
+}\\
+\endfoot
+
+\endlastfoot
+\sphinxtableatstartofbodyhook
+\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+{\hyperref[\detokenize{api/main:main.main}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{main}}}}}()
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+&\begin{varwidth}[t]{\sphinxcolwidth{1}{2}}
+\sphinxAtStartPar
+程序主函数,一键启动 :return:
+\sphinxbeforeendvarwidth
+\end{varwidth}%
+\\
+\sphinxbottomrule
+\end{longtable}
+\sphinxtableafterendhook
+\sphinxatlongtableend
+\end{savenotes}
+\index{main()（在 main 模块中）@\spxentry{main()（在 main 模块中）}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{api/main:main.main}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{main.}}\sphinxbfcode{\sphinxupquote{main}}}
+{}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+程序主函数,一键启动
+:return:
+
+\end{fulllineitems}
+
+
 
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
@@ -1445,6 +1586,9 @@ Sphinx \sphinxhyphen{} 文档生成
 \indexspace
 \bigletter{f}
 \item\relax\sphinxstyleindexentry{feature\_engineer}\sphinxstyleindexpageref{api/feature_engineer:\detokenize{module-feature_engineer}}
+\indexspace
+\bigletter{m}
+\item\relax\sphinxstyleindexentry{main}\sphinxstyleindexpageref{api/main:\detokenize{module-main}}
 \end{sphinxtheindex}
 
 \renewcommand{\indexname}{索引}

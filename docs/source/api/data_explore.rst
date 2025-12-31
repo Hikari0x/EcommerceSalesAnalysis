@@ -14,5 +14,5 @@
       explore_correlation
       explore_missing_values
       explore_numeric_features
-      split_columns_by_type
+      split_columns_clean
    

@@ -1,7 +1,7 @@
 \indexentry{module@\spxentry{module}!data\_loader@\spxentry{data\_loader}}{5}
 \indexentry{data\_loader@\spxentry{data\_loader}!module@\spxentry{module}}{5}
 \indexentry{data\_loader()（在 data\_loader 模块中）@\spxentry{data\_loader()（在 data\_loader 模块中）}}{5}
-\indexentry{get\_basic\_info()（在 data\_loader 模块中）@\spxentry{get\_basic\_info()（在 data\_loader 模块中）}}{5}
+\indexentry{get\_basic\_info()（在 data\_loader 模块中）@\spxentry{get\_basic\_info()（在 data\_loader 模块中）}}{6}
 \indexentry{get\_mysql\_engine()（在 data\_loader 模块中）@\spxentry{get\_mysql\_engine()（在 data\_loader 模块中）}}{6}
 \indexentry{load\_from\_mysql()（在 data\_loader 模块中）@\spxentry{load\_from\_mysql()（在 data\_loader 模块中）}}{6}
 \indexentry{load\_raw\_data()（在 data\_loader 模块中）@\spxentry{load\_raw\_data()（在 data\_loader 模块中）}}{6}
@@ -23,7 +23,7 @@
 \indexentry{explore\_correlation()（在 data\_explore 模块中）@\spxentry{explore\_correlation()（在 data\_explore 模块中）}}{8}
 \indexentry{explore\_missing\_values()（在 data\_explore 模块中）@\spxentry{explore\_missing\_values()（在 data\_explore 模块中）}}{8}
 \indexentry{explore\_numeric\_features()（在 data\_explore 模块中）@\spxentry{explore\_numeric\_features()（在 data\_explore 模块中）}}{8}
-\indexentry{split\_columns\_by\_type()（在 data\_explore 模块中）@\spxentry{split\_columns\_by\_type()（在 data\_explore 模块中）}}{8}
+\indexentry{split\_columns\_clean()（在 data\_explore 模块中）@\spxentry{split\_columns\_clean()（在 data\_explore 模块中）}}{8}
 \indexentry{module@\spxentry{module}!data\_visualize@\spxentry{data\_visualize}}{8}
 \indexentry{data\_visualize@\spxentry{data\_visualize}!module@\spxentry{module}}{8}
 \indexentry{data\_visualize()（在 data\_visualize 模块中）@\spxentry{data\_visualize()（在 data\_visualize 模块中）}}{8}
@@ -33,10 +33,15 @@
 \indexentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）@\spxentry{plot\_numeric\_distribution()（在 data\_visualize 模块中）}}{8}
 \indexentry{module@\spxentry{module}!feature\_engineer@\spxentry{feature\_engineer}}{9}
 \indexentry{feature\_engineer@\spxentry{feature\_engineer}!module@\spxentry{module}}{9}
+\indexentry{add\_missing\_indicators()（在 feature\_engineer 模块中）@\spxentry{add\_missing\_indicators()（在 feature\_engineer 模块中）}}{9}
 \indexentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_dl()（在 feature\_engineer 模块中）}}{9}
 \indexentry{build\_features\_for\_ml()（在 feature\_engineer 模块中）@\spxentry{build\_features\_for\_ml()（在 feature\_engineer 模块中）}}{9}
 \indexentry{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）@\spxentry{encode\_categorical\_for\_dl()（在 feature\_engineer 模块中）}}{9}
-\indexentry{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}{9}
-\indexentry{scale\_numeric\_features()（在 feature\_engineer 模块中）@\spxentry{scale\_numeric\_features()（在 feature\_engineer 模块中）}}{9}
+\indexentry{one\_hot\_encode()（在 feature\_engineer 模块中）@\spxentry{one\_hot\_encode()（在 feature\_engineer 模块中）}}{10}
+\indexentry{scale\_numeric\_features()（在 feature\_engineer 模块中）@\spxentry{scale\_numeric\_features()（在 feature\_engineer 模块中）}}{10}
+\indexentry{split\_columns\_by\_type()（在 feature\_engineer 模块中）@\spxentry{split\_columns\_by\_type()（在 feature\_engineer 模块中）}}{10}
 \indexentry{module@\spxentry{module}!config@\spxentry{config}}{10}
 \indexentry{config@\spxentry{config}!module@\spxentry{module}}{10}
+\indexentry{module@\spxentry{module}!main@\spxentry{main}}{10}
+\indexentry{main@\spxentry{main}!module@\spxentry{module}}{10}
+\indexentry{main()（在 main 模块中）@\spxentry{main()（在 main 模块中）}}{10}
