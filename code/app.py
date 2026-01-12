@@ -10,7 +10,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 导入模块
 import data_loader
 from data_explore import (
     explore_missing_values,
@@ -20,6 +19,8 @@ from data_explore import (
     explore_correlation,
     split_columns_clean
 )
+# plt.rcParams['font.family'] = 'SimHei'
+plt.rcParams['font.family'] = 'Heiti TC'
 
 # 页面基础配置
 st.set_page_config(
